@@ -53,11 +53,17 @@ function DisplayTodos () {
 		input.type = 'checkbox';
 		input.checked = todo.done;
 		span.classList.add('bubble');
-		if (todo.category == 'personal') {
+
+		if (todo.category === 'personal') {
 			span.classList.add('personal');
-		} else {
+		} else if (todo.category === 'business') {
 			span.classList.add('business');
+		} else if (todo.category === 'home') {
+			span.classList.add('home');
+		} else {
+			span.classList.add('lifestyle');
 		}
+		
 		content.classList.add('todo-content');
 		actions.classList.add('actions');
 		edit.classList.add('edit');
